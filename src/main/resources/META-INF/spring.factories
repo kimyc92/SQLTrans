@@ -1,0 +1,2 @@
+# post processor Àû¿ë
+# org.springframework.boot.env.EnvironmentPostProcessor=config.database.EncryptEnvPostProcessor

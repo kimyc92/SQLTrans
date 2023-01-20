@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="springbatchtest">
+
+    <select id="selectSourceTbInfo" parameterType="hashmap" resultType="hashmap">
+  		<![CDATA[
+
+        SELECT /* com.springboot.batch.testjob.retriveUserInfo */
+            'zz'       AS USER_ID
+             , 'ZZZ'      AS USER_NM
+             , '123123'   AS BIZMAN_REG_NO
+             , 'RR'       AS PW1
+             , NULL       AS PW2
+             , '20191123' AS PW_CHG_DATE
+             , NOW()      AS LAST_LOGIN_DATE
+             , 'N'        AS DEL_YN
+             , 'Y'        AS USE_YN
+             , NOW()      AS REG_DTM
+             , '10'       AS REGPE_ID
+             , NOW()      AS MODIFY_DTM
+             , '10'       AS CHGPE_ID
+        FROM DUAL
+
+        ]]>
+	</select>
+<!--      LIMIT #{_skiprows, jdbcType=INTEGER}, #{_pagesize,jdbcType=INTEGER} -->
+</mapper>

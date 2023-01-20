@@ -1,0 +1,19 @@
+#spring.batch.job.names: ${job.name:none}
+
+spring.main.allow-bean-definition-overriding: true
+logging:
+  config: classpath:log/logback.xml
+
+spring:
+  batch:
+    job:
+      enabled: true # 어플리케이션 실행시 배치 자동 실행 여부
+      names: ${job.name:NONE}
+
+#spring.batch.job.names: ${job.name:NONE}
+#spring:
+#  datasource:
+#    url: jdbc:log4jdbc:oracle:thin:@localhost:1521:accsys
+#    username: accsys
+#    password: admin123$
+#    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy

@@ -1,0 +1,78 @@
+<configuration>
+
+    <!-- 일반 LOG 생성 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%highlight([%d{yyyy-MM-dd HH:mm:ss}] [%thread] [%logger] [%-5level] [${PID:- }] %msg%n)</pattern>
+        </encoder>
+    </appender>
+    
+    <!-- 파일 LOG 생성용  property -->
+    <property name="LOG_DIR" value="./logs" />
+    <property name="LOG_PATH_NAME" value="${LOG_DIR}/data.log" />
+    
+    <!-- 파일 LOG 생성 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    
+        <file>${LOG_PATH_NAME}</file>
+        <!-- 일자별로 로그파일 적용하기 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH_NAME}.%d{yyyyMMdd}.%i.txt</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- or whenever the file size reaches 100MB -->
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <!--
+	      	%d{yyyy-MM-dd HH:mm:ss} : 년월일 시분초
+	      	%thread : thread name 
+	      	%-5level : log level , -5는 출력 고정폭 값
+	      	%logger{length} :Logger name의 이름, {length}는 자리수
+	      	%msg : log message %message은 alias
+	      	%n : 줄바꿈
+	      	
+	      	org.fusesource.jansi:jansi:1.8 가 필요함.
+                       Linux ,Mac OS X 기본적으로 지원함
+                       <withJansi>true</withJansi>설정후 사용해야함
+	      	%highlight : log level 별로 color가 다르게 나옴
+		-->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss}] [%thread] [%-5level] [${PID:- }] %msg%n</pattern>
+        </encoder>
+    </appender>
+  
+  <!-- 
+	  LOGGING LEVEL
+	  OFF - 아에 발생시키지 않는다.
+	  TRACE > DEBUG > INFO > WARN > ERROR
+	  1. ERROR -일반적인 에러로 처리가 반드시 필요로 하는 문제를 출력 합니다.
+	  2. WARN - 경고성 메시지로, 에러가 아닌 처리 가능한 문제를 출력 합니다.
+	  3. INFO - 일반적인 데이터를 출력합니다.
+	  4. DEBUG - debug을 위한 용도로, 일반 정보를 상세하게 출력합니다.
+	  5. TRACE - 시스템추적
+	     ※ additivity="false" Application 으로 호출된 Logger의 info 로깅만 기록됩니다.
+   -->
+  <!-- <logger name="jdbc" level="OFF"/> -->
+  <logger name="org.springframework"        level="INFO"  additivity="true" />
+  <logger name="org.springframework.batch"  level="INFO"  additivity="true" />
+  <logger name="org.hibernate.SQL"          level="DEBUG" additivity="false"/>
+  <logger name="org.hibernate.tool.hbm2ddl" level="OFF"   additivity="false"/>
+  <logger name="org.hibernate.type"         level="TRACE" additivity="false" />
+  <logger name="org.hibernate.stat"         level="OFF"   additivity="false" />
+  <logger name="org.hibernate.type.BasicTypeRegistry"  level="OFF" additivity="false" />
+  <logger name="org.hibernate.type.descriptor.sql"     level="OFF" additivity="false" />
+  <logger name="org.mybatis.spring"         level="INFO"  additivity="true" />
+  <logger name="jdbc.sqlonly"               level="INFO"  additivity="false" />
+  <logger name="jdbc.sqltiming"             level="DEBUG" additivity="false" />
+  <logger name="jdbc.audit"                 level="ERROR" additivity="false" />
+  <logger name="jdbc.resultset"             level="ERROR" additivity="true" />
+  <logger name="jdbc.resultsettable"        level="DEBUG" additivity="false" />
+  <logger name="jdbc.connection"            level="ERROR" additivity="false" />
+  
+  <root level="INFO">
+    <appender-ref ref="STDOUT" />
+    <appender-ref ref="FILE" />
+  </root>
+
+</configuration>

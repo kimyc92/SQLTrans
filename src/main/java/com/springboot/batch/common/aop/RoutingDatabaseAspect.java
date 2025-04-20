@@ -69,7 +69,6 @@ public class RoutingDatabaseAspect { //implements InitializingBean, DisposableBe
         try {
 //            RoutingDatabaseConfig routingDatabaseConfig = new RoutingDatabaseConfig();
 //            RoutingDatabaseInfo rdi = (RoutingDatabaseInfo) routingDatabaseConfig.dataSources.get(DatabaseType.Target);
-//            //System.out.println("t11111111111111 - "+rdi.toString());
 //            routingDatabaseInfo.RoutingDatabaseInfo(rdi.getJdbcUrl(), rdi.getDriverClassName(), rdi.getUsername(), rdi.getPassword());
             //System.out.println("t라우팅 전 데이터 확인 - "+RoutingDatabaseContextHolder.getRoutingDBInfo());
 

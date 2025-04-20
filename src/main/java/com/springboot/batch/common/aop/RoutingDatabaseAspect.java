@@ -110,14 +110,12 @@ public class RoutingDatabaseAspect { //implements InitializingBean, DisposableBe
         try {
             /*
             RoutingDatabaseInfo rdi = RoutingDatabaseContextHolder.getRoutingDBInfo(DatabaseType.Source);
-            System.out.println("s11111111111111 - "+rdi.toString());
             routingDatabaseInfo.RoutingDatabaseInfo(rdi.getJdbcUrl(), rdi.getDriverClassName(), rdi.getUsername(), rdi.getPassword());
-            System.out.println("s라우팅 전 데이터 확인 - "+RoutingDatabaseContextHolder.getRoutingDBInfo());
+            System.out.println("라우팅 전 데이터 확인 - "+RoutingDatabaseContextHolder.getRoutingDBInfo());
             */
 
 //            RoutingDatabaseConfig routingDatabaseConfig = new RoutingDatabaseConfig();
 //            RoutingDatabaseInfo rdi = (RoutingDatabaseInfo) routingDatabaseConfig.dataSources.get(DatabaseType.Source);
-//            //System.out.println("t11111111111111 - "+rdi.toString());
 //            routingDatabaseInfo.RoutingDatabaseInfo(rdi.getJdbcUrl(), rdi.getDriverClassName(), rdi.getUsername(), rdi.getPassword());
             RoutingDatabaseContextHolder.set(DatabaseType.Source);
             Object result = pjp.proceed();
@@ -134,7 +132,6 @@ public class RoutingDatabaseAspect { //implements InitializingBean, DisposableBe
     @Around("execution(* com.springboot.batch..*.Step1Dao.*(..))")
     public Object doStep1TaskLetProfiling(ProceedingJoinPoint joinPoint) throws Throwable {
 
-        //System.out.println("몬데 왜안동작해 또 개짜증나게");
         //Annotation을 읽어 들이기 위해 현재의 method를 읽어 들인다.
 //        final String methodName = joinPoint.getSignature().getName();
 //        final MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();

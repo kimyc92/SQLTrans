@@ -44,13 +44,13 @@ public class RoutingDatabaseContextHolder {
     }
 //
 //    public static void setRoutingDBInfo(DatabaseType databaseType, RoutingDatabaseInfo routingDatabaseInfo) {
-//        System.out.println("셋팅 확인 - "+ databaseType);
+//        System.out.println("셋팅 - "+ databaseType);
 //        RoutingDatabaseContextHolder.routingDBInfo.put(databaseType, routingDatabaseInfo);
 //        //System.out.println("확인22 - "+getRoutingDBInfo(databaseType));
 //    }
 //
 //    public static RoutingDatabaseInfo getRoutingDBInfo(DatabaseType databaseType) {
-//        System.out.println("여기 확인 - "+ databaseType);
+//        System.out.println("확인 - "+ databaseType);
 //        return RoutingDatabaseContextHolder.routingDBInfo.get(databaseType);
 //    }
 

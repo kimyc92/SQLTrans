@@ -89,7 +89,6 @@ public class RoutingDatabaseConfig {
 
         //dataSourceRouter.setTargetDataSources(ds);
         //System.out.println("22222222222222222");
-        //System.out.println("ddd? - "+routingDataSource.get(dbInfo).toString());
         //DataSource ds = ;
         //System.out.println("ds - "+ds);
         //routingDataSource.add(DatabaseType.Master, createHikariDataSource(env, "prd.master.datasource"));
@@ -98,7 +97,7 @@ public class RoutingDatabaseConfig {
 
         //routingDataSource.setTargetDataSources((Map<Object, Object>) routingDataSource.get(dbInfo));
         //routingDataSource.setDefaultTargetDataSource((Map<Object, Object>) routingDataSource.get(dbInfo));
-        //System.out.println("확인 - "+routingDataSource.get(DatabaseType.Master));
+        //System.out.println(routingDataSource.get(DatabaseType.Master));
 
         RoutingDataSource dataSourceRouter = new RoutingDataSource();
         dataSourceRouter.setTargetDataSources(dataSources);

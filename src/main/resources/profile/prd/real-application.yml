@@ -7,8 +7,8 @@ prd:
       poolSize: 1
       maximumPoolSize: 1
       jdbcUrl: jdbc:log4jdbc:oracle:thin:@localhost:1521:accsys
-      username: MsYkAmPzhVYx9fMOinAF66lzSJ48Yp6WRtOEW+wbprrr8FiWmIfLpzXayT59m2RQyEH06w==
-      password: CIcHFdq0ON9QSdVU8rCgO0NOEE9upfwpJvIb0PdfMIVAUX40yEiybWtgfcOVZOA6S5IogQ==
+      username: 
+      password: 
       driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
       autoCommit: true
       connectionTimeout: 30000
@@ -39,8 +39,8 @@ prd:
 #      poolSize: 1
 #      maximumPoolSize: 1
 #      jdbcUrl: jdbc:log4jdbc:oracle:thin:@localhost:1623:target #${targetJdbcUrl}
-#      username: QNa84kbdlwDjfc7zC4dlxDsvLUZYLNgn8OzoBRyYlQbnpnlBRFqkO+2ErsLVwbZPjddkbg== #${targetUsername}
-#      password: aZbK3FrEse1QhMCWmM4zAzQeO4ZS2KGoNsmMo/gFRzaZFXjmGrIfaKbDn7UrPj31w2RwQg== #${targetPassword}
+#      username:  #${targetUsername}
+#      password:  #${targetPassword}
 #      driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy #${targetDriverClassName}
 #      autoCommit: true
 #      connectionTimeout: 30000
